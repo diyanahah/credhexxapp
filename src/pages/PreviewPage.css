@@ -1,0 +1,54 @@
+ .preview-page {
+  padding: 80px 30px;
+  background: linear-gradient(to bottom, #0b1d3a, #0a172b, #091020);
+  min-height: 100vh;
+  color: #f5f5dc;
+}
+
+.preview-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #f5f5dc;
+}
+
+.cert-preview-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 20px;
+}
+
+.cert-card {
+  background: rgba(245, 245, 220, 0.06);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+  transition: 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #eaeaea;
+}
+
+.cert-card a {
+  display: block;
+  margin-top: 10px;
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cert-card a:hover {
+  text-decoration: underline;
+}

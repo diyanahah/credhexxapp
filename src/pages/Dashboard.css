@@ -1,0 +1,296 @@
+ 
+/* 🌌 Dashboard Background */
+.dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b1d3a 0%, #0a172b 50%, #0b1d3a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 40px 40px;
+}
+
+/* 🧱 Layout Container */
+.dashboard-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+  width: 100%;
+  max-width: 1200px;
+  border: 1px solid rgba(245, 245, 220, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📁 Sections */
+.upload-section, .certs-section {
+  flex: 1 1 45%;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+  color: #eaeaea;
+}
+
+.upload-section {
+  background: rgba(245, 245, 220, 0.05);
+  box-shadow: inset 0 0 20px rgba(245, 245, 220, 0.1), 0 0 20px rgba(245, 245, 220, 0.1);
+}
+
+.certs-section {
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: inset 0 0 10px rgba(245, 245, 220, 0.1), 0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.upload-section h2, .certs-section h3 {
+  color: #f5f5dc;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+}
+
+/* 📤 File Input */
+.upload-section input[type="file"] {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px dashed #d4af37;
+  color: #eaeaea;
+  font-size: 1rem;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #f5f5dc;
+}
+
+/* 🔍 Preview Button */
+.preview-button {
+  background: linear-gradient(135deg, #d4af37, #bca935);
+  color: #0b1d3a;
+  border: none;
+  padding: 14px 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 0 15px #d4af37;
+  transition: 0.3s ease;
+}
+
+.preview-button:hover {
+  background: linear-gradient(135deg, #bca935, #a4892a);
+  transform: scale(1.05);
+}
+
+/* 📄 Certificate List */
+.certs-section ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 rgba(255, 255, 255, 0.05);
+}
+
+.certs-section ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.certs-section ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.certs-section ul::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 10px;
+}
+
+/* 🎫 Certificate Item */
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+.cert-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.certs-section a {
+  color: #f5f5dc;
+  text-decoration: none;
+  font-weight: bold;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.2s ease;
+}
+
+.certs-section a:hover {
+  text-decoration: underline;
+  color: #d4af37;
+}
+
+/* 🗑️ Delete Button */
+.delete-button {
+  background: transparent;
+  color: #ff5c5c;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: 0.2s ease;
+}
+
+.delete-button:hover {
+  color: #ff2e2e;
+  transform: scale(1.2);
+}
+
+/* 🔓 Logout Button */
+.logout-button {
+  background: linear-gradient(135deg, #7c8ba3, #57687b);
+  color: #f5f5dc;
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(245, 245, 220, 0.1);
+  transition: 0.3s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #4f6074, #3b4c5e);
+  transform: scale(1.05);
+}
+
+/* ✨ No Certificates Text */
+.no-certs {
+  color: #bbb;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+}
+/* 🌗 Toggle Dark/Light Mode Switch */
+.toggle-mode {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.mode-label {
+  color: #f5f5dc;
+  font-weight: bold;
+}
+
+/* 🌓 Light Mode Styles */
+body.light-mode {
+  background: #f5f5f5;
+  color: #111;
+}
+
+body.light-mode .dashboard-bg {
+  background: linear-gradient(to bottom, #fffef4 0%, #eaeaea 100%);
+}
+
+body.light-mode .dashboard-layout {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid #ccc;
+}
+
+body.light-mode .upload-section,
+body.light-mode .certs-section {
+  background: rgba(255, 255, 255, 0.7);
+  color: #000;
+}
+
+body.light-mode .preview-button,
+body.light-mode .logout-button {
+  color: #fff;
+}
+
+body.light-mode .cert-item {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* 🎞️ Certificate Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeInCert 0.6s ease-in forwards;
+}
+
+@keyframes fadeInCert {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,98 @@
+ .dashboard-bg {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(ellipse at bottom, #0b1d3a 0%, #000814 100%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  background-size: cover;
+  animation: starScroll 80s linear infinite;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to right bottom, rgba(245, 245, 220, 0.08), rgba(212, 175, 55, 0.04));
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(245, 245, 220, 0.2);
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  color: #f5f5dc;
+  text-align: center;
+  animation: popupScale 0.6s ease;
+}
+
+.dashboard-content h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.dashboard-content h3 {
+  color: #f5f5dc;
+  margin-top: 30px;
+}
+
+.dashboard-content a {
+  color: #f5f5dc;
+  text-decoration: none;
+}
+
+.dashboard-content a:hover {
+  text-decoration: underline;
+  color: #d4af37;
+}
+
+.logout-button {
+  background-color: #d4af37;
+  color: #0b1d3a;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  transform: scale(1.05);
+  background-color: #bfa335;
+}
+
+@keyframes starScroll {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes popupScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
